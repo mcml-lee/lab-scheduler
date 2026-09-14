@@ -80,7 +80,9 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .cal-day.today.in-week { background: var(--text); color: #f7f6f2; }
 
 .schedule-wrap { overflow-x: auto; }
-.schedule-grid { display: grid; grid-template-columns: 70px repeat(7, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; min-width: 620px; }
+.schedule-grid { display: grid; grid-template-columns: 70px repeat(7, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); min-width: 620px; }
+.schedule-grid > *:nth-child(1) { border-top-left-radius: var(--radius-lg); }
+.schedule-grid > *:nth-child(8) { border-top-right-radius: var(--radius-lg); }
 .sg-header { background: var(--text); color: #f7f6f2; padding: 10px 8px; font-size: 11px; font-weight: 500; text-align: center; font-family: 'Syne', sans-serif; position: sticky; top: 56px; z-index: 5; box-shadow: 0 1px 0 var(--border); }
 .sg-header.time-col { background: var(--bg3); color: var(--muted); }
 .sg-cell { background: var(--bg2); padding: 3px 4px; min-height: 36px; position: relative; cursor: pointer; transition: background 0.1s; }
@@ -573,8 +575,8 @@ const EQUIPMENT = [
   { id: 'e5',  name: 'Rheometer',                        category: 'Characterization' },
   { id: 'e6',  name: 'DMA',                              category: 'Characterization' },
   { id: 'e7',  name: 'Ox-tran',                          category: 'Characterization' },
-  { id: 'e8',  name: 'Vacuum Oven #1',                   category: 'Processing' },
-  { id: 'e9',  name: 'Vacuum Oven #2',                   category: 'Processing' },
+  { id: 'e8',  name: 'Small Oven (Cole Parmer BV20)',    category: 'Processing' },
+  { id: 'e9',  name: 'Large Oven (Cole Parmer BV50)',    category: 'Processing' },
   { id: 'e10', name: 'Vacuum Oven #3',                   category: 'Processing' },
   { id: 'e11', name: 'Sonicator',                        category: 'Processing' },
   { id: 'e12', name: 'Carver Press',                     category: 'Processing' },
