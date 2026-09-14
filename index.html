@@ -85,10 +85,10 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .schedule-grid > *:nth-child(8) { border-top-right-radius: var(--radius-lg); }
 .sg-header {background: var(--text);color: #f7f6f2;padding: 10px 8px;font-size: 11px; font-weight: 500; text-align: center; font-family: 'Syne', sans-serif; position: sticky; top: 0; z-index: 5;box-shadow: 0 1px 0 var(--border);}
 .sg-header.time-col { background: var(--bg3); color: var(--muted); }
-.sg-cell { background: var(--bg2); padding: 3px 4px; min-height: 36px; position: relative; cursor: pointer; transition: background 0.1s; }
+.sg-cell { background: var(--bg2); padding: 3px 4px; min-height: 24px; position: relative; cursor: pointer; transition: background 0.1s; }
 .sg-cell:hover { background: #f0efeb; }
 .sg-cell.hour-start { border-top: 1px solid var(--border); }
-.sg-time { background: var(--bg3); padding: 3px 6px; font-size: 10px; color: var(--hint); display: flex; align-items: center; min-height: 36px; }
+.sg-time { background: var(--bg3); padding: 3px 6px; font-size: 10px; color: var(--hint); display: flex; align-items: center; min-height: 24px; }
 .sg-time.hour-start { border-top: 1px solid var(--border); color: var(--muted); font-weight: 500; }
 .booking-block { position: absolute; left: 2px; right: 2px; border-radius: 4px; padding: 2px 5px; font-size: 10px; font-weight: 500; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; z-index: 2; cursor: default; }
 .block-approved { background: var(--green-bg); color: var(--green); border-left: 2px solid var(--green); }
@@ -1399,7 +1399,7 @@ function renderWeekGrid() {
             const colSlots = Math.ceil((segEndMs - cs.getTime()) / (30 * 60000));
             const blk = document.createElement('div');
             blk.className = 'booking-block ' + (ov.status === 'approved' ? 'block-approved' : 'block-pending');
-            blk.style.height = (Math.max(colSlots, 1) * 36 - 4) + 'px';
+            blk.style.height = (Math.max(colSlots, 1) * 24 - 4) + 'px';
             blk.style.top = '2px';
             const continuesNext = be.getTime() > dayEndMs;
             const continuedFrom = bs < cs;
@@ -1470,7 +1470,7 @@ function initDragSelect(grid, cellMap, days, eq) {
       const preview = document.createElement('div');
       preview.className = 'drag-preview';
       preview.style.top    = '2px';
-      preview.style.height = (slots * 36 - 4) + 'px';
+      preview.style.height = (slots * 24 - 4) + 'px';
       preview.textContent  = durLabel;
       startCell.appendChild(preview);
       dragPreview = preview;
