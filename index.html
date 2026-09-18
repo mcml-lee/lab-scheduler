@@ -18,7 +18,6 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 14px; }
-
 nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
 .nav-brand { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
 .nav-brand span { opacity: 0.45; font-weight: 400; }
@@ -34,13 +33,11 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .nav-member strong { color: #f7f6f2; }
 .btn-signout { font-size: 11px; padding: 4px 10px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: rgba(247,246,242,0.6); cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .btn-signout:hover { background: rgba(255,255,255,0.1); color: #f7f6f2; }
-
 .page { display: none; padding: 32px; max-width: 1100px; margin: 0 auto; }
 .page.active { display: block; }
 .page-header { margin-bottom: 28px; }
 .page-header h1 { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 600; letter-spacing: -0.5px; }
 .page-header p { font-size: 13px; color: var(--muted); margin-top: 4px; }
-
 .equip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 32px; }
 .equip-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; cursor: pointer; transition: all 0.15s; }
 .equip-card:hover { border-color: var(--border2); transform: translateY(-1px); }
@@ -55,7 +52,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .dot-locked { background: var(--hint); }
 .equip-next { font-size: 11px; color: var(--muted); margin-top: 6px; }
 .lock-badge { font-size: 10px; color: var(--hint); margin-top: 6px; display: flex; align-items: center; gap: 4px; }
-
 .week-nav { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
 .week-nav h2 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 600; flex: 1; min-width: 200px; }
 .week-btn { background: var(--bg2); border: 1px solid var(--border2); border-radius: var(--radius); padding: 6px 14px; font-size: 13px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
@@ -78,22 +74,21 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .cal-day.today { background: var(--text); color: #f7f6f2; font-weight: 600; }
 .cal-day.in-week { background: var(--green-bg); color: var(--green); font-weight: 500; }
 .cal-day.today.in-week { background: var(--text); color: #f7f6f2; }
-
-.schedule-wrap { overflow-x: auto; }
+.schedule-wrap { overflow-x: auto;overflow-y: auto; max-height: 70vh;}
 .schedule-grid { display: grid; grid-template-columns: 70px repeat(7, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); min-width: 620px; }
 .schedule-grid > *:nth-child(1) { border-top-left-radius: var(--radius-lg); }
 .schedule-grid > *:nth-child(8) { border-top-right-radius: var(--radius-lg); }
-.sg-header { background: var(--text); color: #f7f6f2; padding: 10px 8px; font-size: 11px; font-weight: 500; text-align: center; font-family: 'Syne', sans-serif; position: sticky; top: 56px; z-index: 5; box-shadow: 0 1px 0 var(--border); }
+.sg-header {background: var(--text);color: #f7f6f2;padding: 10px 8px;font-size: 11px; font-weight: 500; text-align: center; font-family: 'Syne', sans-serif; position: sticky; top: 0; z-index: 5;box-shadow: 0 1px 0 var(--border);}
 .sg-header.time-col { background: var(--bg3); color: var(--muted); }
-.sg-cell { background: var(--bg2); padding: 3px 4px; min-height: 36px; position: relative; cursor: pointer; transition: background 0.1s; }
+.sg-cell { background: var(--bg2); padding: 3px 4px; min-height: 24px; position: relative; cursor: pointer; transition: background 0.1s; }
 .sg-cell:hover { background: #f0efeb; }
 .sg-cell.hour-start { border-top: 1px solid var(--border); }
-.sg-time { background: var(--bg3); padding: 3px 6px; font-size: 10px; color: var(--hint); display: flex; align-items: center; min-height: 36px; }
+.sg-time { background: var(--bg3); padding: 3px 6px; font-size: 10px; color: var(--hint); display: flex; align-items: center; min-height: 24px; }
 .sg-time.hour-start { border-top: 1px solid var(--border); color: var(--muted); font-weight: 500; }
 .booking-block { position: absolute; left: 2px; right: 2px; border-radius: 4px; padding: 2px 5px; font-size: 10px; font-weight: 500; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; z-index: 2; cursor: default; }
 .block-approved { background: var(--green-bg); color: var(--green); border-left: 2px solid var(--green); }
+  
 .block-pending  { background: var(--amber-bg); color: var(--amber); border-left: 2px solid #f0a500; }
-
 .form-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; max-width: 560px; }
 .form-row { margin-bottom: 18px; }
 .form-row label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.4px; }
@@ -107,7 +102,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .form-success { display: none; background: var(--green-bg); color: var(--green); border: 1px solid rgba(26,122,74,0.2); border-radius: var(--radius); padding: 14px 18px; font-size: 13px; margin-top: 16px; }
 .form-notice { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(138,94,0,0.2); border-radius: var(--radius); padding: 12px 16px; font-size: 13px; margin-bottom: 20px; }
-
 #auth-overlay { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 250; }
 #auth-overlay.hidden { display: none; }
 .auth-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px 40px; max-width: 380px; width: 100%; }
@@ -123,7 +117,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .auth-alt a { color: var(--text); cursor: pointer; text-decoration: underline; }
 .auth-panels > div { display: none; }
 .auth-panels > div.active { display: block; }
-
 #pin-screen { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 300; }
 #pin-screen.hidden { display: none; }
 .pin-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px 40px; text-align: center; max-width: 340px; width: 100%; }
@@ -133,7 +126,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .pin-input:focus { border-color: var(--text); }
 .pin-error { font-size: 12px; color: var(--red); min-height: 18px; margin-bottom: 12px; }
 .btn-pin { background: var(--text); color: #f7f6f2; border: none; border-radius: var(--radius); padding: 11px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; width: 100%; }
-
 .admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
 .filter-tabs { display: flex; gap: 6px; }
 .filter-tab { font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border2); background: transparent; color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.12s; }
@@ -158,12 +150,10 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .badge-approved { background: var(--green-bg); color: var(--green); }
 .badge-rejected { background: var(--red-bg); color: var(--red); }
 .empty-state { text-align: center; padding: 48px 24px; color: var(--hint); font-size: 13px; }
-
 .admin-subtabs { display: flex; gap: 0; border-bottom: 1px solid var(--border2); margin-bottom: 24px; }
 .admin-subtab { font-size: 13px; padding: 10px 18px; border: none; background: transparent; color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; }
 .admin-subtab:hover { color: var(--text); }
 .admin-subtab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 500; }
-
 .members-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
 .btn-add-member { font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: var(--radius); border: none; background: var(--text); color: #f7f6f2; cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .btn-add-member:hover { opacity: 0.85; }
@@ -178,7 +168,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .btn-edit-member:hover { background: var(--bg3); }
 .btn-del-member { font-size: 11px; padding: 4px 10px; border-radius: 5px; border: 1px solid rgba(154,32,32,0.2); background: transparent; color: var(--red); cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .btn-del-member:hover { background: var(--red-bg); }
-
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(26,26,24,0.5); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
 .modal-overlay.open { display: flex; }
 .modal { background: var(--bg2); border-radius: var(--radius-lg); padding: 28px; max-width: 480px; width: 100%; max-height: 90vh; overflow-y: auto; }
@@ -191,23 +180,19 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 .btn-confirm:disabled { opacity: 0.5; cursor: not-allowed; }
 .modal-success { display: none; background: var(--green-bg); color: var(--green); border: 1px solid rgba(26,122,74,0.2); border-radius: var(--radius); padding: 12px 16px; font-size: 13px; margin-top: 14px; }
 .modal-error { display: none; background: var(--red-bg); color: var(--red); border: 1px solid rgba(154,32,32,0.2); border-radius: var(--radius); padding: 12px 16px; font-size: 13px; margin-top: 14px; }
-
 .perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 4px; }
 .perm-check { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: all 0.12s; font-size: 12px; }
 .perm-check:hover { border-color: var(--border2); background: var(--bg3); }
 .perm-check input { width: 14px; height: 14px; cursor: pointer; accent-color: var(--text); }
 .perm-check.checked { border-color: var(--green); background: var(--green-bg); color: var(--green); font-weight: 500; }
-
 .btn-cancel-booking { font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(154,32,32,0.25); background: transparent; color: var(--red); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.12s; }
 .btn-cancel-booking:hover { background: var(--red-bg); }
 .my-bookings-section { margin-top: 32px; max-width: 560px; }
 .my-bookings-section h2 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.3px; }
-
 .reg-table { width: 100%; border-collapse: collapse; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
 .reg-table th { background: var(--bg3); font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; padding: 10px 14px; text-align: left; }
 .reg-table td { padding: 12px 14px; font-size: 13px; border-top: 1px solid var(--border); vertical-align: middle; }
 .reg-table tr:hover td { background: #fafaf7; }
-
 .sg-cell { user-select: none; }
 .sg-cell.drag-highlight { background: #dceef7 !important; }
 .sg-cell.drag-start     { background: #b8dcf0 !important; }
@@ -243,7 +228,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
 </style>
 </head>
 <body>
-
 <div id="auth-overlay">
   <div class="auth-card">
     <div class="auth-panels" id="auth-panels">
@@ -259,7 +243,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
           <a onclick="closeAuthOverlay()">Browse schedule →</a>
         </div>
       </div>
-
       <div id="panel-register">
         <h2>Create account</h2>
         <p class="auth-sub">Register for lab access. You'll confirm your email, then a staff member will approve your account.</p>
@@ -271,13 +254,11 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
         <button class="btn-pin" id="register-btn" onclick="doRegister()">Create account</button>
         <div class="auth-alt"><a onclick="showAuthPanel('signin')">← Back to sign in</a></div>
       </div>
-
       <div id="panel-confirm-email">
         <h2>Check your email</h2>
         <p class="auth-sub">We did not sent a confirmation link to <strong id="confirm-email-addr"></strong>. Do not click it to verify your address, just come back here and sign in.</p>
         <button class="btn-pin" onclick="showAuthPanel('signin')">Back to sign in</button>
       </div>
-
       <div id="panel-pending">
         <h2>Account pending</h2>
         <p class="auth-sub">Your email is confirmed ✓<br><br>Your account is waiting for staff approval. You'll be able to book equipment once approved. You can still browse the schedule.</p>
@@ -287,7 +268,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     </div>
   </div>
 </div>
-
 <div id="pin-screen" class="hidden">
   <div class="pin-card">
     <h2>Admin access</h2>
@@ -297,7 +277,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     <button class="btn-pin" onclick="checkPin()">Unlock</button>
   </div>
 </div>
-
 <nav>
   <div class="nav-brand">Lab Scheduler <span>/ Equipment Booking</span></div>
   <div style="display:flex;align-items:center;gap:16px">
@@ -317,7 +296,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     </div>
   </div>
 </nav>
-
 <div class="page active" id="page-schedule">
   <div class="page-header">
     <h1>Equipment availability</h1>
@@ -357,7 +335,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     </p>
   </div>
 </div>
-
 <div class="page" id="page-book">
   <div class="page-header"><h1>Request a booking</h1><p>Fill in the form below. A staff member will approve or decline your request.</p></div>
   <div id="book-not-signed-in" class="form-notice" style="max-width:560px;display:none">
@@ -405,7 +382,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     <div class="request-list" id="my-bookings-list"><div class="empty-state">No bookings yet.</div></div>
   </div>
 </div>
-
 <div class="page" id="page-admin">
   <div class="admin-header">
     <div class="page-header" style="margin:0"><h1>Admin</h1><p>Manage bookings, members and registrations.</p></div>
@@ -454,7 +430,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     <div class="request-list" id="noshow-alerts"><div class="empty-state">No alerts.</div></div>
   </div>
 </div>
-
 <div class="page" id="page-usage">
   <div class="admin-header">
     <div class="page-header" style="margin:0"><h1>Lab usage</h1><p>Live sign-in/out tracking across all machines.</p></div>
@@ -474,13 +449,11 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     </div>
   </div>
 </div>
-
 <style>
 @media (max-width: 860px) {
   #page-usage > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
 }
 </style>
-
 <div class="modal-overlay" id="slot-modal">
   <div class="modal">
     <h3 id="slot-modal-title">Book this slot</h3>
@@ -516,7 +489,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     <div class="modal-success" id="slot-success">Request submitted! Pending staff approval.</div>
   </div>
 </div>
-
 <div class="modal-overlay" id="booking-detail-modal">
   <div class="modal" style="max-width:380px">
     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:4px">
@@ -537,7 +509,6 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     <div class="modal-error" id="bd-error" style="margin-top:10px"></div>
   </div>
 </div>
-
 <div class="modal-overlay" id="member-modal">
   <div class="modal">
     <h3 id="mm-title">Edit member</h3>
@@ -562,11 +533,9 @@ nav { background: var(--text); color: #f7f6f2; padding: 0 32px; display: flex; a
     <div class="modal-error" id="mm-error"></div>
   </div>
 </div>
-
 <script>
 const SUPABASE_URL  = 'https://jhbednwfcgrhusagyuhn.supabase.co';
 const SUPABASE_ANON = 'sb_publishable_b8sY-aUx8FzIGUuxVuOnOQ_EW-C2t1P';
-
 const EQUIPMENT = [
   { id: 'e1',  name: 'Fast Scanning Calorimeter',        category: 'Characterization' },
   { id: 'e2',  name: 'Differential Scanning Calorimeter', category: 'Characterization' },
@@ -583,9 +552,7 @@ const EQUIPMENT = [
   { id: 'e13', name: 'Batch Foaming Station',            category: 'Processing' },
   { id: 'e14', name: 'POM (Polarized Optical Microscope)', category: 'Characterization' },
 ];
-
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-
 let allBookings = [], allSessions = [], allMembers = [];
 let selectedEquip = null, weekOffset = 0, adminFilter = 'all', adminUnlocked = false;
 let modalSlot = null;
@@ -594,18 +561,15 @@ let editingMemberId = null;
 let calViewYear = new Date().getFullYear(), calViewMonth = new Date().getMonth();
 let allEquipStatus = {}; // equip_id -> { disabled, reason }
 let allPowerStatus = {}; // equip_id -> { is_on, power_watts, recorded_at }
-
 // A plug should report roughly every POLL_INTERVAL (script default 10s).
 // If we haven't heard from it in a while, treat it as offline rather than
 // trusting the last known on/off state.
 const PLUG_STALE_AFTER_MS = 90 * 1000;
-
 async function fetchNoshowAlerts() {
   const { data, error } = await db.from('noshow_alerts').select('*').order('checked_at', { ascending: false }).limit(20);
   if (error) { console.error('fetchNoshowAlerts error:', error); return; }
   renderNoshowAlerts(data || []);
 }
-
 function renderNoshowAlerts(alerts) {
   const el = document.getElementById('noshow-alerts');
   const badge = document.getElementById('noshow-count');
@@ -634,7 +598,6 @@ function renderNoshowAlerts(alerts) {
     </div>`;
   }).join('');
 }
-
 async function fetchPowerStatus() {
   const { data, error } = await db.from('plug_status').select('*');
   if (error) { console.error('fetchPowerStatus error:', error); return; }
@@ -642,7 +605,6 @@ async function fetchPowerStatus() {
   (data || []).forEach(r => allPowerStatus[r.equip_id] = r);
   renderPowerStatus();
 }
-
 function renderPowerStatus() {
   const el = document.getElementById('power-status');
   if (!el) return;
@@ -651,12 +613,10 @@ function renderPowerStatus() {
     .filter(r => r.p); // only show machines we've heard from at least once
   // Intentionally NOT sorted by state/time - keeps a stable order (equipment
   // list order) so rows don't jump around every time a plug reports in.
-
   if (!rows.length) {
     el.innerHTML = '<div class="empty-state">No power data yet.</div>';
     return;
   }
-
   el.innerHTML = rows.map(({ eq, p }) => {
     const stale = (Date.now() - new Date(p.last_seen_at)) > PLUG_STALE_AFTER_MS;
     const label = stale
@@ -675,7 +635,6 @@ function renderPowerStatus() {
     </div>`;
   }).join('');
 }
-
 function timeAgo(dateStr) {
   const diff = Math.floor((Date.now() - new Date(dateStr)) / 60000);
   if (diff < 1) return 'just now';
@@ -683,13 +642,11 @@ function timeAgo(dateStr) {
   const h = Math.floor(diff / 60), m = diff % 60;
   return h + 'h ' + (m > 0 ? m + 'm' : '') + ' ago';
 }
-
 async function fetchEquipStatus() {
   const { data } = await db.from('equipment_status').select('*');
   allEquipStatus = {};
   (data || []).forEach(r => allEquipStatus[r.equip_id] = { disabled: r.disabled, reason: r.reason || '' });
 }
-
 async function toggleEquipDisabled(equipId, disabled) {
   await db.from('equipment_status').upsert({ equip_id: equipId, disabled, updated_at: new Date().toISOString() }, { onConflict: 'equip_id' });
   await fetchEquipStatus();
@@ -697,12 +654,10 @@ async function toggleEquipDisabled(equipId, disabled) {
   populateEquipSelect();
   renderEquipStatusPanel();
 }
-
 async function saveEquipReason(equipId, reason) {
   await db.from('equipment_status').upsert({ equip_id: equipId, reason, updated_at: new Date().toISOString() }, { onConflict: 'equip_id' });
   allEquipStatus[equipId] = { ...allEquipStatus[equipId], reason };
 }
-
 function renderEquipStatusPanel() {
   const el = document.getElementById('equipment-status-list');
   if (!el) return;
@@ -725,7 +680,6 @@ function renderEquipStatusPanel() {
       </div>`;
   }).join('');
 }
-
 // ── FIX: AbortController to cancel stale drag event listeners ─────
 // Each call to initDragSelect (triggered by renderWeekGrid on week
 // navigation) was adding new mousedown/mouseenter/mouseup listeners
@@ -734,13 +688,10 @@ function renderEquipStatusPanel() {
 // cells resolved to the wrong date strings. We now abort all
 // listeners from the previous render before registering new ones.
 let dragAbort = null;
-
 let _drag = null; // active drag state
-
 // ── Boot ───────────────────────────────────────────────────────────
 (async function boot() {
   setSyncStatus(false, 'Connecting…');
-
   db.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
       if (session) {
@@ -758,7 +709,6 @@ let _drag = null; // active drag state
       showAuthOverlay();
     }
   });
-
   try {
     await fetchBookings();
     await fetchSessions();
@@ -772,35 +722,28 @@ let _drag = null; // active drag state
   try { await fetchPowerStatus(); } catch(e) {}
   try { await fetchNoshowAlerts(); } catch(e) {}
   setSyncStatus(true, 'Live');
-
   // Re-render (not re-fetch) periodically so a plug that's gone silent
   // flips to "No signal" even if no new row ever arrives.
   setInterval(renderPowerStatus, 15000);
-
   db.channel('bookings-live')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'bookings' },
       () => { fetchBookings(); })
     .subscribe();
-
   db.channel('sessions-live')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'sessions' },
       () => { fetchSessions(); })
     .subscribe();
-
   db.channel('plug-status-live')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'plug_status' },
       () => { fetchPowerStatus(); })
     .subscribe();
-
   db.channel('noshow-alerts-live')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'noshow_alerts' },
       () => { fetchNoshowAlerts(); })
     .subscribe();
-
   renderEquipGrid();
   document.getElementById('f-date').value = new Date().toISOString().split('T')[0];
 })();
-
 async function loadCurrentMember(user) {
   const { data: member } = await db.from('members').select('*').eq('id', user.id).single();
   if (!member) {
@@ -816,7 +759,6 @@ async function loadCurrentMember(user) {
     loadMemberData(member);
   }
 }
-
 async function loadMemberData(member) {
   const { data: perms } = await db.from('member_permissions').select('equip_id').eq('member_id', member.id);
   currentMember = {
@@ -826,11 +768,9 @@ async function loadMemberData(member) {
     status: member.status || 'pending',
     permissions: new Set((perms || []).map(p => p.equip_id))
   };
-
   updateNavMember();
   renderEquipGrid();
   if (selectedEquip) renderWeekGrid();
-
   if (currentMember.status === 'approved') {
     closeAuthOverlay();
     populateEquipSelect();
@@ -840,7 +780,6 @@ async function loadMemberData(member) {
     await db.auth.signOut();
   }
 }
-
 function updateNavMember() {
   const area = document.getElementById('nav-member-area');
   if (currentMember) {
@@ -850,44 +789,35 @@ function updateNavMember() {
     area.style.display = 'none';
   }
 }
-
 // ── Auth overlay ───────────────────────────────────────────────────
 function showAuthOverlay() {
   document.getElementById('auth-overlay').classList.remove('hidden');
   showAuthPanel('signin');
 }
-
 function closeAuthOverlay() {
   document.getElementById('auth-overlay').classList.add('hidden');
 }
-
 function showAuthPanel(name) {
   document.querySelectorAll('.auth-panels > div').forEach(p => p.classList.remove('active'));
   document.getElementById('panel-' + name).classList.add('active');
 }
-
 async function doSignIn() {
   const email    = document.getElementById('si-email').value.trim();
   const password = document.getElementById('si-password').value;
   const errEl    = document.getElementById('signin-error');
   const btn      = document.getElementById('signin-btn');
-
   errEl.classList.remove('show');
   if (!email || !password) { errEl.textContent = 'Please enter your email and password.'; errEl.classList.add('show'); return; }
-
   btn.disabled = true; btn.textContent = 'Signing in…';
-
   const timeout = setTimeout(() => {
     btn.disabled = false; btn.textContent = 'Sign in';
     errEl.textContent = 'Request timed out. Check your connection and try again.';
     errEl.classList.add('show');
   }, 8000);
-
   try {
     const { data, error } = await db.auth.signInWithPassword({ email, password });
     clearTimeout(timeout);
     btn.disabled = false; btn.textContent = 'Sign in';
-
     if (error) {
       errEl.textContent = error.message === 'Email not confirmed'
         ? 'Please confirm your email first. Check your inbox.'
@@ -895,7 +825,6 @@ async function doSignIn() {
       errEl.classList.add('show');
       return;
     }
-
     if (data?.user) {
       await loadCurrentMember(data.user);
     }
@@ -906,7 +835,6 @@ async function doSignIn() {
     errEl.classList.add('show');
   }
 }
-
 async function doRegister() {
   const name     = document.getElementById('reg-name').value.trim();
   const email    = document.getElementById('reg-email').value.trim();
@@ -914,36 +842,27 @@ async function doRegister() {
   const errEl    = document.getElementById('register-error');
   const succEl   = document.getElementById('register-success');
   const btn      = document.getElementById('register-btn');
-
   errEl.classList.remove('show'); succEl.classList.remove('show');
   if (!name || !email || !password) { errEl.textContent = 'All fields are required.'; errEl.classList.add('show'); return; }
   if (password.length < 6) { errEl.textContent = 'Password must be at least 6 characters.'; errEl.classList.add('show'); return; }
-
   btn.disabled = true; btn.textContent = 'Creating account…';
-
   const { error } = await db.auth.signUp({
     email, password,
     options: { data: { name } }
   });
-
   btn.disabled = false; btn.textContent = 'Create account';
-
   if (error) {
     errEl.textContent = error.message;
     errEl.classList.add('show');
     return;
   }
-
   document.getElementById('confirm-email-addr').textContent = email;
   showAuthPanel('confirm-email');
 }
-
 async function doSignOut() {
   await db.auth.signOut();
 }
-
 const ADMIN_PIN = '4321';
-
 // ── Pages ──────────────────────────────────────────────────────────
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -958,7 +877,6 @@ function showPage(name) {
   if (name === 'usage')    renderUsage();
   if (name === 'book')     renderBookPage();
 }
-
 function renderBookPage() {
   const notIn    = document.getElementById('book-not-signed-in');
   const notApp   = document.getElementById('book-not-approved');
@@ -977,24 +895,22 @@ function renderBookPage() {
     renderMyBookings();
   }
 }
-
 function handleBookTab() {
   if (!currentMember) { showAuthOverlay(); return; }
   showPage('book');
 }
-
 function updatePendingBadge() {
+  
+
   const el = document.getElementById('pending-count');
   if (!adminUnlocked) { el.style.display = 'none'; return; }
   const n  = allBookings.filter(b => b.status === 'pending').length;
   el.textContent = n; el.style.display = n > 0 ? 'inline' : 'none';
 }
-
 function setSyncStatus(live, label) {
   document.getElementById('sync-dot').className = 'sync-dot' + (live ? ' live' : '');
   document.getElementById('sync-label').textContent = label;
 }
-
 // ── Supabase data ──────────────────────────────────────────────────
 async function fetchBookings() {
   const { data, error } = await db.from('bookings').select('*').order('created_at', { ascending: false });
@@ -1007,7 +923,6 @@ async function fetchBookings() {
     if (document.getElementById('page-book').classList.contains('active')) renderMyBookings();
   }
 }
-
 async function fetchSessions() {
   const { data } = await db.from('sessions').select('*').order('signed_in_at', { ascending: false }).limit(100);
   if (data) {
@@ -1015,7 +930,6 @@ async function fetchSessions() {
     if (document.getElementById('page-usage').classList.contains('active')) renderUsage();
   }
 }
-
 async function fetchMembers() {
   const { data: members, error } = await db.from('members').select('*').order('name');
   if (error || !members) { allMembers = []; return; }
@@ -1028,13 +942,13 @@ async function fetchMembers() {
   renderRegistrations();
   updateRegBadge();
 }
-
 function updateRegBadge() {
-  const n  = allMembers.filter(m => m.status === 'pending').length;
+  
   const el = document.getElementById('reg-count');
+  
+  const n  = allMembers.filter(m => m.status === 'pending').length;
   el.textContent = n; el.style.display = n > 0 ? 'inline' : 'none';
 }
-
 // ── Admin ──────────────────────────────────────────────────────────
 function tryAdmin() {
   if (adminUnlocked) { showPage('admin'); return; }
@@ -1043,7 +957,6 @@ function tryAdmin() {
   document.getElementById('pin-error').textContent = '';
   setTimeout(() => document.getElementById('pin-input').focus(), 50);
 }
-
 function checkPin() {
   if (document.getElementById('pin-input').value === ADMIN_PIN) {
     adminUnlocked = true;
@@ -1056,9 +969,7 @@ function checkPin() {
     document.getElementById('pin-input').value = '';
   }
 }
-
 function adminLogout() { adminUnlocked = false; updatePendingBadge(); showPage('schedule'); }
-
 function showAdminTab(tab) {
   adminSubTab = tab;
   ['bookings','registrations','members','equipment','alerts'].forEach(t => {
@@ -1069,13 +980,11 @@ function showAdminTab(tab) {
   if (tab === 'equipment') renderEquipStatusPanel();
   if (tab === 'alerts') fetchNoshowAlerts();
 }
-
 function setFilter(f, el) {
   adminFilter = f;
   document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active'); renderAdmin();
 }
-
 function renderAdmin() {
   let bk = [...allBookings];
   if (adminFilter !== 'all') bk = bk.filter(b => b.status === adminFilter);
@@ -1106,18 +1015,15 @@ function renderAdmin() {
       </div></div>`;
   }).join('');
 }
-
 async function updateStatus(id, status) {
   await db.from('bookings').update({ status }).eq('id', id);
 }
-
 async function adminCancelBooking(id, name) {
   if (!confirm(`Cancel booking for "${name}"? This cannot be undone.`)) return;
   const { error } = await db.from('bookings').delete().eq('id', id);
   if (error) { alert('Error cancelling booking: ' + error.message); return; }
   await fetchBookings();
 }
-
 // ── Registrations admin ────────────────────────────────────────────
 function renderRegistrations() {
   const pending = allMembers.filter(m => m.status === 'pending');
@@ -1141,18 +1047,15 @@ function renderRegistrations() {
     </tbody>
   </table>`;
 }
-
 async function approveRegistration(id) {
   await db.from('members').update({ status: 'approved' }).eq('id', id);
   fetchMembers();
 }
-
 async function rejectRegistration(id, name) {
   if (!confirm(`Reject registration for "${name}"?`)) return;
   await db.from('members').update({ status: 'rejected' }).eq('id', id);
   fetchMembers();
 }
-
 // ── Members admin ──────────────────────────────────────────────────
 function renderMembersTable() {
   const tbody = document.getElementById('members-tbody');
@@ -1179,7 +1082,6 @@ function renderMembersTable() {
     </tr>`;
   }).join('');
 }
-
 function openMemberModal(memberId) {
   editingMemberId = memberId;
   const member = allMembers.find(m => m.id === memberId);
@@ -1191,7 +1093,6 @@ function openMemberModal(memberId) {
   document.getElementById('mm-error').style.display   = 'none';
   document.getElementById('mm-submit').disabled = false;
   document.getElementById('mm-submit').textContent = 'Save';
-
   const grid = document.getElementById('mm-perms');
   grid.innerHTML = EQUIPMENT.map(e => {
     const checked = member.permissions.has(e.id);
@@ -1201,53 +1102,42 @@ function openMemberModal(memberId) {
       ${e.name}
     </label>`;
   }).join('');
-
   document.getElementById('member-modal').classList.add('open');
 }
-
 function closeMemberModal() {
   document.getElementById('member-modal').classList.remove('open');
   editingMemberId = null;
 }
-
 async function saveMember() {
   const newStatus     = document.getElementById('mm-status').value;
   const errEl         = document.getElementById('mm-error');
   const btn           = document.getElementById('mm-submit');
   const selectedPerms = [...document.querySelectorAll('#mm-perms input:checked')].map(i => i.value);
-
   errEl.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Saving…';
-
   const { error } = await db.from('members').update({ status: newStatus }).eq('id', editingMemberId);
   if (error) { errEl.textContent = error.message; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Save'; return; }
-
   await db.from('member_permissions').delete().eq('member_id', editingMemberId);
   if (selectedPerms.length > 0) {
     await db.from('member_permissions').insert(selectedPerms.map(equip_id => ({ member_id: editingMemberId, equip_id })));
   }
-
   document.getElementById('mm-success').style.display = 'block';
   btn.textContent = 'Saved ✓';
-
   if (currentMember && currentMember.id === editingMemberId) {
     currentMember.permissions = new Set(selectedPerms);
     currentMember.status = newStatus;
     renderEquipGrid();
     if (selectedEquip) renderWeekGrid();
   }
-
   await fetchMembers();
   setTimeout(() => closeMemberModal(), 1400);
 }
-
 async function revokeAccess(id, name) {
   if (!confirm(`Revoke access for "${name}"? This sets their status to pending.`)) return;
   await db.from('members').update({ status: 'pending' }).eq('id', id);
   await db.from('member_permissions').delete().eq('member_id', id);
   fetchMembers();
 }
-
 // ── Equipment grid ─────────────────────────────────────────────────
 function renderEquipGrid() {
   const now  = new Date();
@@ -1261,17 +1151,14 @@ function renderEquipGrid() {
     });
     const upcoming = eqB.filter(b => new Date(b.date + 'T' + b.start_time) > now)
       .sort((a, c) => new Date(a.date + 'T' + a.start_time) - new Date(c.date + 'T' + c.start_time))[0];
-
     const isApproved = currentMember && currentMember.status === 'approved';
     const isDisabled = allEquipStatus[eq.id] && allEquipStatus[eq.id].disabled;
     const disabledReason = isDisabled ? (allEquipStatus[eq.id].reason || 'Out of service') : '';
-
     let dot = 'dot-free', txt = 'Available now';
     if (isDisabled) { dot = 'dot-busy'; txt = disabledReason; }
     else if (isApproved && !currentMember.permissions.has(eq.id)) { dot = 'dot-locked'; txt = 'No access'; }
     else if (active) { dot = 'dot-busy'; txt = 'In use'; }
     else if (upcoming && (new Date(upcoming.date + 'T' + upcoming.start_time) - now) / 60000 < 60) { dot = 'dot-soon'; txt = 'Booked soon'; }
-
     const card = document.createElement('div');
     card.className = 'equip-card' + (selectedEquip === eq.id ? ' selected' : '') + (isApproved && !currentMember.permissions.has(eq.id) ? ' locked' : '') + (isDisabled ? ' locked' : '');
     card.innerHTML = `
@@ -1286,14 +1173,12 @@ function renderEquipGrid() {
     grid.appendChild(card);
   });
 }
-
 function selectEquip(id) {
   selectedEquip = id; weekOffset = 0; renderEquipGrid();
   document.getElementById('schedule-section').style.display = 'block';
   renderWeekGrid();
   document.getElementById('schedule-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
-
 // ── Local date helper ──────────────────────────────────────────────
 // Returns "YYYY-MM-DD" using LOCAL time (not UTC), avoiding the
 // off-by-one-day issue that toISOString() causes in negative-offset
@@ -1302,7 +1187,6 @@ function localDateStr(d) {
   const pad = n => String(n).padStart(2, '0');
   return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
 }
-
 // ── Week grid ──────────────────────────────────────────────────────
 function getWeekDates(offset) {
   const now = new Date(), day = now.getDay();
@@ -1311,10 +1195,8 @@ function getWeekDates(offset) {
   mon.setHours(0, 0, 0, 0);
   return Array.from({ length: 7 }, (_, i) => { const d = new Date(mon); d.setDate(mon.getDate() + i); return d; });
 }
-
 function changeWeek(dir) { weekOffset += dir; renderWeekGrid(); }
 function goToToday()     { weekOffset = 0;   renderWeekGrid(); }
-
 function jumpToDate(dateStr) {
   const target   = new Date(dateStr + 'T00:00:00');
   const now      = new Date();
@@ -1325,27 +1207,21 @@ function jumpToDate(dateStr) {
   weekOffset = Math.floor((target - todayMon) / (7 * 24 * 3600 * 1000));
   renderWeekGrid(); closeCal();
 }
-
 function renderWeekGrid() {
   const days = getWeekDates(weekOffset);
   const eq   = EQUIPMENT.find(e => e.id === selectedEquip);
   const isApproved = currentMember && currentMember.status === 'approved';
   const hasAccess  = isApproved && currentMember.permissions.has(selectedEquip);
-
   document.getElementById('week-label').textContent = eq.name + ' — ' +
     days[0].toLocaleDateString('en-CA', { month: 'short', day: 'numeric' }) + ' – ' +
     days[6].toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' });
-
   renderCalDays(days);
-
   const grid = document.getElementById('schedule-grid');
   grid.innerHTML = '';
   const dn = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-
   const timeHeader = document.createElement('div');
   timeHeader.className = 'sg-header time-col'; timeHeader.textContent = 'Time';
   grid.appendChild(timeHeader);
-
   days.forEach((d, i) => {
     const today = d.toDateString() === new Date().toDateString();
     const hdr = document.createElement('div');
@@ -1354,19 +1230,15 @@ function renderWeekGrid() {
     hdr.innerHTML = `${dn[i]}<br><span style="font-size:10px;opacity:0.6">${d.getDate()}</span>`;
     grid.appendChild(hdr);
   });
-
   // Build cell map for drag: cellMap[slot][dayIndex] = cell element
   const cellMap = [];
-
   for (let slot = 0; slot < 48; slot++) {
     const h = Math.floor(slot / 2), m = slot % 2 === 0 ? '00' : '30', isHour = slot % 2 === 0;
     const ts = `${String(h).padStart(2,'0')}:${m}`;
-
     const timeCell = document.createElement('div');
     timeCell.className = 'sg-time' + (isHour ? ' hour-start' : '');
     timeCell.textContent = isHour ? ts : '';
     grid.appendChild(timeCell);
-
     cellMap[slot] = [];
     days.forEach((day, di) => {
       // ── FIX: use localDateStr() instead of toISOString().split('T')[0]
@@ -1388,7 +1260,6 @@ function renderWeekGrid() {
       cell.dataset.ds   = ds;
       cell.dataset.ts   = ts;
       cell.dataset.booked = ov ? '1' : '0';
-
       if (ov) {
         const bs = new Date(ov.date + 'T' + ov.start_time);
         const be = new Date(bs.getTime() + ov.duration * 60000);
@@ -1401,10 +1272,10 @@ function renderWeekGrid() {
             const colSlots = Math.ceil((segEndMs - cs.getTime()) / (30 * 60000));
             const blk = document.createElement('div');
             blk.className = 'booking-block ' + (ov.status === 'approved' ? 'block-approved' : 'block-pending');
-            blk.style.height = (Math.max(colSlots, 1) * 36 - 4) + 'px';
+            blk.style.height = (Math.max(colSlots, 1) * 24 - 4) + 'px';
             blk.style.top = '2px';
             const continuesNext = be.getTime() > dayEndMs;
-            const continuedFrom = bs < cs;
+            const continuedFrom = bs < cs;  
             blk.textContent = ov.name + (continuesNext ? ' →' : '') + (continuedFrom ? ' (cont.)' : '');
             blk.title = `${ov.name} · ${ov.date} ${ov.start_time} · ${ov.duration}min · ${ov.status}`;
             blk.style.cursor = 'pointer';
@@ -1426,15 +1297,12 @@ function renderWeekGrid() {
       grid.appendChild(cell);
     });
   }
-
   const hintEl = document.getElementById('drag-hint');
   if (hintEl) hintEl.style.display = hasAccess ? 'flex' : 'none';
-
   if (hasAccess) {
     initDragSelect(grid, cellMap, days, eq);
   }
 }
-
 // ── Drag-to-select on schedule grid ───────────────────────────────
 function initDragSelect(grid, cellMap, days, eq) {
   // ── FIX: abort listeners from the previous week's render ─────────
@@ -1446,16 +1314,13 @@ function initDragSelect(grid, cellMap, days, eq) {
   if (dragAbort) { dragAbort.abort(); }
   dragAbort = new AbortController();
   const sig = dragAbort.signal;
-
   let dragPreview = null;
-
   function clearHighlights() {
     grid.querySelectorAll('.sg-cell.drag-highlight,.sg-cell.drag-start').forEach(c => {
       c.classList.remove('drag-highlight','drag-start');
     });
     if (dragPreview) { dragPreview.remove(); dragPreview = null; }
   }
-
   function applyHighlights(startSlot, endSlot, di) {
     clearHighlights();
     const lo = Math.min(startSlot, endSlot), hi = Math.max(startSlot, endSlot);
@@ -1472,25 +1337,22 @@ function initDragSelect(grid, cellMap, days, eq) {
       const preview = document.createElement('div');
       preview.className = 'drag-preview';
       preview.style.top    = '2px';
-      preview.style.height = (slots * 36 - 4) + 'px';
+      preview.style.height = (slots * 24 - 4) + 'px';
       preview.textContent  = durLabel;
       startCell.appendChild(preview);
       dragPreview = preview;
     }
   }
-
   for (let slot = 0; slot < 48; slot++) {
     days.forEach((day, di) => {
       const cell = cellMap[slot] && cellMap[slot][di];
       if (!cell || cell.dataset.booked === '1') return;
-
       cell.addEventListener('mousedown', (e) => {
         if (e.button !== 0) return;
         e.preventDefault();
         _drag = { startSlot: slot, curSlot: slot, di, ds: cell.dataset.ds, ts: cell.dataset.ts, eq, moved: false };
         cell.classList.add('drag-start');
       }, { signal: sig });
-
       cell.addEventListener('mouseenter', () => {
         if (!_drag || _drag.di !== di) return;
         const blocked = isRangeBlocked(_drag.startSlot, slot, di, cellMap);
@@ -1501,7 +1363,6 @@ function initDragSelect(grid, cellMap, days, eq) {
       }, { signal: sig });
     });
   }
-
   grid.addEventListener('mouseup', (e) => {
     if (!_drag) return;
     const { startSlot, curSlot, di, eq: dragEq } = _drag;
@@ -1517,13 +1378,11 @@ function initDragSelect(grid, cellMap, days, eq) {
     e.stopPropagation();
     openSlotModalWithDuration(ds, ts, dragEq, durMin);
   }, { signal: sig });
-
   // Cancel drag if mouse is released outside the grid
   document.addEventListener('mouseup', () => {
     if (_drag) { clearHighlights(); _drag = null; }
   }, { signal: sig });
 }
-
 function isRangeBlocked(startSlot, endSlot, di, cellMap) {
   const lo = Math.min(startSlot, endSlot), hi = Math.max(startSlot, endSlot);
   for (let s = lo; s <= hi; s++) {
@@ -1532,7 +1391,6 @@ function isRangeBlocked(startSlot, endSlot, di, cellMap) {
   }
   return false;
 }
-
 function openSlotModalWithDuration(ds, ts, eq, durMin) {
   openSlotModal(ds, ts, eq);
   const hours = Math.floor(durMin / 60), mins = durMin % 60;
@@ -1542,7 +1400,6 @@ function openSlotModalWithDuration(ds, ts, eq, durMin) {
   if (minsEl)  minsEl.value  = mins;
   syncDuration('sm');
 }
-
 // ── Calendar dropdown ──────────────────────────────────────────────
 function toggleCal(e) {
   e.stopPropagation();
@@ -1552,9 +1409,7 @@ function toggleCal(e) {
   calViewYear = days[0].getFullYear(); calViewMonth = days[0].getMonth();
   renderCalDays(days); dd.classList.add('open');
 }
-
 function closeCal() { document.getElementById('cal-dropdown').classList.remove('open'); }
-
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') {
     fetchBookings().then(() => setSyncStatus(true, 'Live'))
@@ -1562,7 +1417,6 @@ document.addEventListener('visibilitychange', () => {
     fetchSessions().catch(() => {});
   }
 });
-
 function ensureRealtimeConnected() {
   const state = db.channel('bookings-live').state;
   if (state === 'closed' || state === 'errored') {
@@ -1575,14 +1429,12 @@ function ensureRealtimeConnected() {
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') ensureRealtimeConnected();
 });
-
 function calMonthStep(dir) {
   calViewMonth += dir;
   if (calViewMonth > 11) { calViewMonth = 0; calViewYear++; }
   if (calViewMonth < 0)  { calViewMonth = 11; calViewYear--; }
   renderCalDays(getWeekDates(weekOffset));
 }
-
 function renderCalDays(currentWeekDays) {
   const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   document.getElementById('cal-month-label').textContent = months[calViewMonth] + ' ' + calViewYear;
@@ -1603,7 +1455,6 @@ function renderCalDays(currentWeekDays) {
   }
   document.getElementById('cal-days').innerHTML = html;
 }
-
 // ── Slot booking modal ─────────────────────────────────────────────
 function openSlotModal(ds, ts, eq) {
   if (!currentMember) { showAuthOverlay(); return; }
@@ -1620,17 +1471,14 @@ function openSlotModal(ds, ts, eq) {
   setTimeout(() => document.getElementById('sm-purpose').focus(), 80);
 }
 function closeSlotModal() { document.getElementById('slot-modal').classList.remove('open'); }
-
 async function submitSlotBooking() {
   if (!currentMember) { closeSlotModal(); showAuthOverlay(); return; }
   const purpose  = document.getElementById('sm-purpose').value.trim();
   const duration = parseInt(document.getElementById('sm-duration').value);
   if (!purpose) { alert('Please enter a purpose.'); return; }
   if (duration > MAX_BOOKING_MINS) { alert('Maximum booking duration is 3 days (72 hours).'); return; }
-
   const btn = document.getElementById('sm-submit');
   btn.disabled = true; btn.textContent = 'Checking availability…';
-
   await fetchBookings();
   const newStart = new Date(modalSlot.ds + 'T' + modalSlot.ts);
   const newEnd   = new Date(newStart.getTime() + duration * 60000);
@@ -1645,22 +1493,18 @@ async function submitSlotBooking() {
     btn.disabled = false; btn.textContent = 'Submit request';
     closeSlotModal(); return;
   }
-
   btn.textContent = 'Submitting…';
   const { error } = await db.from('bookings').insert([{
     name: currentMember.name, email: currentMember.email,
     equip_id: modalSlot.eq.id, date: modalSlot.ds,
     start_time: modalSlot.ts, duration, purpose, status: 'pending'
   }]);
-
   if (error) { alert('Submit error: ' + error.message); btn.disabled = false; btn.textContent = 'Submit request'; return; }
   document.getElementById('slot-success').style.display = 'block';
   btn.textContent = 'Submitted ✓';
   setTimeout(() => closeSlotModal(), 2200);
 }
-
 let detailBookingId = null;
-
 function openBookingDetail(b) {
   detailBookingId = b.id;
   const eq = EQUIPMENT.find(e => e.id === b.equip_id);
@@ -1668,7 +1512,6 @@ function openBookingDetail(b) {
   const et = String(Math.floor(tot / 60)).padStart(2,'0') + ':' + String(tot % 60).padStart(2,'0');
   const durH = Math.floor(b.duration / 60), durM = b.duration % 60;
   const durStr = durH > 0 ? durH + 'h' + (durM > 0 ? ' ' + durM + 'm' : '') : durM + ' min';
-
   document.getElementById('bd-title').textContent = b.name;
   document.getElementById('bd-sub').textContent   = eq ? eq.name : b.equip_id;
   document.getElementById('bd-badge').textContent = b.status.charAt(0).toUpperCase() + b.status.slice(1);
@@ -1678,19 +1521,15 @@ function openBookingDetail(b) {
   document.getElementById('bd-duration').textContent = durStr;
   document.getElementById('bd-purpose').textContent  = b.purpose || '—';
   document.getElementById('bd-error').style.display  = 'none';
-
   const isOwner = currentMember && b.email === currentMember.email;
   const canCancel = isOwner && (b.status === 'pending' || b.status === 'approved');
   document.getElementById('bd-cancel-btn').style.display = canCancel ? 'block' : 'none';
-
   document.getElementById('booking-detail-modal').classList.add('open');
 }
-
 function closeBookingDetail() {
   document.getElementById('booking-detail-modal').classList.remove('open');
   detailBookingId = null;
 }
-
 async function cancelBookingFromDetail() {
   if (!detailBookingId || !currentMember) return;
   const booking = allBookings.find(b => b.id === detailBookingId);
@@ -1712,7 +1551,6 @@ async function cancelBookingFromDetail() {
   await fetchBookings();
   renderMyBookings();
 }
-
 // ── My Bookings ────────────────────────────────────────────────────
 function renderMyBookings() {
   if (!currentMember) return;
@@ -1744,7 +1582,6 @@ function renderMyBookings() {
       </div></div>`;
   }).join('');
 }
-
 async function cancelBooking(id) {
   if (!currentMember) return;
   const booking = allBookings.find(b => b.id === id);
@@ -1757,7 +1594,6 @@ async function cancelBooking(id) {
   await fetchBookings();
   renderMyBookings();
 }
-
 // ── Duration sync helper ───────────────────────────────────────────
 const MAX_BOOKING_MINS = 4320; // 72 hours (3 days)
 function syncDuration(prefix) {
@@ -1776,14 +1612,12 @@ function syncDuration(prefix) {
   const capped = total === MAX_BOOKING_MINS ? ' (max)' : (total < 30 ? ' (min 30 min)' : '');
   label.textContent = '= ' + (h > 0 ? h + (m > 0 ? '.5' : '') + ' hr' + (h !== 1 && m === 0 ? 's' : '') : '') + (h === 0 ? m + ' min' : '') + capped;
 }
-
 // ── Book form page ─────────────────────────────────────────────────
 function setDayDuration(prefix, days) {
   document.getElementById(prefix + '-dur-hours').value = days * 24;
   document.getElementById(prefix + '-dur-mins').value  = 0;
   syncDuration(prefix);
 }
-
 function populateEquipSelect() {
   const permitted = currentMember && currentMember.status === 'approved'
     ? EQUIPMENT.filter(e => currentMember.permissions.has(e.id) && !(allEquipStatus[e.id] && allEquipStatus[e.id].disabled))
@@ -1793,7 +1627,6 @@ function populateEquipSelect() {
       ? permitted.map(e => `<option value="${e.id}">${e.name} (${e.category})</option>`).join('')
       : '<option value="">No equipment assigned yet</option>';
 }
-
 async function submitBooking() {
   if (!currentMember || currentMember.status !== 'approved') { showAuthOverlay(); return; }
   const equipId  = document.getElementById('f-equip').value;
@@ -1805,7 +1638,6 @@ async function submitBooking() {
   if (!currentMember.permissions.has(equipId)) { alert('You don\'t have permission to book this equipment.'); return; }
   if (allEquipStatus[equipId] && allEquipStatus[equipId].disabled) { alert('This equipment is currently out of service and cannot be booked.'); return; }
   if (duration > MAX_BOOKING_MINS) { alert('Maximum booking duration is 3 days (72 hours).'); return; }
-
   const btn = document.getElementById('submit-btn');
   btn.disabled = true; btn.textContent = 'Submitting…';
   const { error } = await db.from('bookings').insert([{
@@ -1819,7 +1651,6 @@ async function submitBooking() {
   renderMyBookings();
   setTimeout(() => document.getElementById('form-success').style.display = 'none', 5000);
 }
-
 // ── Usage ──────────────────────────────────────────────────────────
 function renderUsage() {
   const active = allSessions.filter(s => !s.signed_out_at);
@@ -1851,7 +1682,6 @@ function renderUsage() {
           </div></div>`;
       }).join('');
 }
-
 // ── Exports ────────────────────────────────────────────────────────
 function exportCSV() {
   if (!allBookings.length) { alert('No bookings to export.'); return; }
@@ -1867,7 +1697,6 @@ function exportCSV() {
   a.href = URL.createObjectURL(new Blob([[hdrs.join(','), ...rows].join('\n')], { type: 'text/csv;charset=utf-8;' }));
   a.download = 'lab-bookings-' + new Date().toISOString().split('T')[0] + '.csv'; a.click();
 }
-
 function exportSessionsCSV() {
   if (!allSessions.length) { alert('No sessions to export.'); return; }
   const hdrs = ['Name','Equipment','Sign In','Sign Out','Duration (min)'];
